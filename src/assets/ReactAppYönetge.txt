@@ -1,0 +1,9 @@
+React Uygulama Geliştirme Adımları
+
+
+1- npm create vite@latest react-app
+2- framework -> react
+3- typescript-swc
+4- cmd -> react-app -> code .
+5- npm i (ctrl +j) - terminal
+5- npm run dev (terminal)
