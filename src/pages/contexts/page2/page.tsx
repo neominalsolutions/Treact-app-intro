@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router';
+import { CounterContext } from '../../../contexts/counter.context';
 
 function Page2() {
 	const [counter, setCounter] = React.useState(1);
+	const globalState = useContext(CounterContext); // contexten paylaşılan veriyi çek.
 
 	return (
 		<>
@@ -10,7 +12,8 @@ function Page2() {
 				<hr></hr>
 				Page2
 				<br></br>
-				<p>Sayac: {counter}</p>
+				<p>Local Sayac: {counter}</p>
+				<p>Global Sayac: {globalState?.counter}</p>
 				<button onClick={() => setCounter(counter + 1)}>(+)</button>
 				<br></br>
 				<Link to="/page1">Page 2</Link>

@@ -5,6 +5,7 @@ import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router';
 import { mainRoutes } from './routes/main-routes';
 import { adminRoutes } from './routes/admin-routes';
+import { CounterProvider } from './contexts/counter.context';
 
 // import './index.css';
 // import { Demo } from './Demo';
@@ -27,7 +28,10 @@ const router = createBrowserRouter([mainRoutes, adminRoutes]);
 
 // yeni güncel versiyon
 createRoot(document.getElementById('root')!).render(
-	<RouterProvider router={router} />
+	<CounterProvider>
+		<RouterProvider router={router} />
+	</CounterProvider>
 );
 
 // RouterProvider router={router} /> uygulamayı route yapısı ile ayağa kaldır.
+// Providerları uygulamanın en dışına sarmalayarak tüm uygulamadki componentlerin ortak verileri paylaşmasını sağlıyoruz.
