@@ -8,18 +8,14 @@ function MainLayout() {
 		<>
 			<nav>
 				<NavLink
-					className={({ isActive }) =>
-						isActive ? 'active-link' : 'passive-link'
-					}
+					className={({ isActive }) => (isActive ? 'active' : 'passive')}
 					to="/"
 				>
 					Anasayfa
 				</NavLink>
 				{'|'}
 				<NavLink
-					className={({ isActive }) =>
-						isActive ? 'active-link' : 'passive-link'
-					}
+					className={({ isActive }) => (isActive ? 'active' : 'passive')}
 					to="/about"
 				>
 					Hakkımızda

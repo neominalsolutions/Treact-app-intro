@@ -1,9 +1,7 @@
-a.active-link  {
-    color:'red' !important;
-    text-decoration: none;
+a.active {
+  color: red;
 }
 
-a.passive-link {
-    color:'gray' !important;
-    text-decoration: none;
+a.passive {
+  color: gray;
 }
