@@ -31,7 +31,7 @@ export function FunctionApp(props: FunctionAppProps) {
 		// console.log('sayac' + counter);
 		setCounterState(counterState + 1);
 		// state asenkron çalışıyor
-		console.log('counterState', counterState);
+		// console.log('counterState', counterState);
 		// Cannot assign to read only property
 		// Propslar State gibi set edilemez. Immutable olarak tanımlıdır.
 		props.counter = props.counter + 1;

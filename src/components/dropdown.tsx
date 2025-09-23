@@ -21,7 +21,7 @@ export function TDropdown({ items, onItemSelect, sx }: TDropdownProps) {
 	console.log('sx', sx);
 
 	const onItemSelectHandler = (e: any) => {
-		console.log('e', e);
+		console.log('a', e);
 		onItemSelect(e.target.value);
 	};
 
@@ -36,7 +36,7 @@ export function TDropdown({ items, onItemSelect, sx }: TDropdownProps) {
 					);
 				})}
 			</select>
-			<button>Button1</button>
+			{/* <button>Button1</button> */}
 		</>
 	);
 }
