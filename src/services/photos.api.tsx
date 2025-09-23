@@ -2,16 +2,27 @@ import axios from 'axios';
 
 // Sunucu tafalı dto tanımları burada interface oluyor.
 export interface Photo {
-	albumId: number;
+	id: number;
 	title: string;
 	thumbnailUrl: string;
 }
 
 export const getPhotos = async () => {
-	const response = (await axios.get)<Photo[]>(
+	const response = await axios.get(
 		'https://jsonplaceholder.typicode.com/photos'
 	);
-	const data: Photo[] = (await response).data;
+	const data = (await response).data;
+
+	console.log('data', data);
+
+	return data;
+};
+
+export const getPhotosById = async (id: string) => {
+	const response = await axios.get<Photo>(
+		'https://jsonplaceholder.typicode.com/photos/' + id
+	);
+	const data: Photo = (await response).data;
 
 	console.log('data', data);
 

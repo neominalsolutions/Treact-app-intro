@@ -21,6 +21,13 @@ function MainLayout() {
 					Hakkımızda
 				</NavLink>
 				{'|'}
+				<NavLink
+					className={({ isActive }) => (isActive ? 'active' : 'passive')}
+					to="/photos"
+				>
+					Fotograflar
+				</NavLink>
+				{'|'}
 				<a href="https://google.com">Google</a>
 			</nav>
 

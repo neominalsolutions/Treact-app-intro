@@ -3,9 +3,8 @@
 
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router';
-import MainLayout from './layout/main-layout';
-import Home from './pages/home/page';
-import About from './pages/about/page';
+import { mainRoutes } from './routes/main-routes';
+import { adminRoutes } from './routes/admin-routes';
 
 // import './index.css';
 // import { Demo } from './Demo';
@@ -24,22 +23,7 @@ import About from './pages/about/page';
 // 	</>
 // );
 
-const router = createBrowserRouter([
-	{
-		path: '',
-		Component: MainLayout,
-		children: [
-			{
-				index: true, // / pathdeki işlk açılış sayfası için index:true
-				Component: Home, // sayfa ilk yüklenir / path açılır ve outlet kısmına otomatik olarak Home page girer.
-			},
-			{
-				path: '/about',
-				Component: About,
-			},
-		],
-	},
-]);
+const router = createBrowserRouter([mainRoutes, adminRoutes]);
 
 // yeni güncel versiyon
 createRoot(document.getElementById('root')!).render(
