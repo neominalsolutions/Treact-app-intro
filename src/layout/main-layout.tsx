@@ -28,6 +28,20 @@ function MainLayout() {
 					Fotograflar
 				</NavLink>
 				{'|'}
+				<NavLink
+					className={({ isActive }) => (isActive ? 'active' : 'passive')}
+					to="/page1"
+				>
+					Page 1
+				</NavLink>
+				{'|'}
+				<NavLink
+					className={({ isActive }) => (isActive ? 'active' : 'passive')}
+					to="/page2"
+				>
+					Page 2
+				</NavLink>
+				{'|'}
 				<a href="https://google.com">Google</a>
 			</nav>
 
