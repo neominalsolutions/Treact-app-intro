@@ -1,0 +1,9 @@
+a.active-link  {
+    color:'red' !important;
+    text-decoration: none;
+}
+
+a.passive-link {
+    color:'gray' !important;
+    text-decoration: none;
+}
