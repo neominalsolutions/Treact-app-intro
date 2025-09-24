@@ -8,7 +8,8 @@ import { adminRoutes } from './routes/admin-routes';
 import { CounterProvider } from './contexts/counter.context';
 import { Provider } from 'react-redux';
 import store from './contexts/store';
-
+import '@fontsource/roboto/400.css';
+import Container from '@mui/material/Container';
 // import './index.css';
 // import { Demo } from './Demo';
 
@@ -30,9 +31,11 @@ const router = createBrowserRouter([mainRoutes, adminRoutes]);
 
 // yeni güncel versiyon
 createRoot(document.getElementById('root')!).render(
-	<Provider store={store}> 
+	<Provider store={store}>
 		<CounterProvider>
-			<RouterProvider router={router} />
+			<Container maxWidth="xl">
+				<RouterProvider router={router} />
+			</Container>
 		</CounterProvider>
 	</Provider>
 );

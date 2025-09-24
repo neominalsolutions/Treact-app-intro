@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react';
 import { getPhotos, type Photo } from '../../services/photos.api';
 import { Link } from 'react-router';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import Grid from '@mui/material/Grid';
 
 function PhotoPage() {
 	// sayfa componenti
@@ -32,9 +36,27 @@ function PhotoPage() {
 		<>
 			{photo.map((item) => {
 				return (
-					<div>
-						<Link to={`/photos/${item.id}`}> {item.title}</Link>
-					</div>
+					<Grid container>
+						{
+							<Grid size={12}>
+								<List
+									sx={{
+										width: '100%',
+										bgcolor: 'background.paper',
+									}}
+								>
+									<ListItem>
+										<Link to={`/photos/${item.id}`}>
+											<ListItemText
+												primary={item.title}
+												secondary="Jan 9, 2014"
+											/>
+										</Link>
+									</ListItem>
+								</List>
+							</Grid>
+						}
+					</Grid>
 				);
 			})}
 		</>

@@ -1,7 +1,9 @@
 a.active {
   color: red;
+    text-decoration: none;
 }
 
 a.passive {
-  color: gray;
+  color: white;
+  text-decoration: none;
 }

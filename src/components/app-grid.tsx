@@ -1,0 +1,24 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import * as React from 'react';
+import { DataGrid } from '@mui/x-data-grid';
+
+const rows: any = [
+	{ id: 1, name: 'Data Grid', description: 'the Community version' },
+	{ id: 2, name: 'Data Grid Pro', description: 'the Pro version' },
+	{ id: 3, name: 'Data Grid Premium', description: 'the Premium version' },
+];
+
+const columns: any[] = [
+	{ field: 'name', headerName: 'Product Name', width: 200 },
+	{ field: 'description', headerName: 'Description', width: 300 },
+];
+
+function AppGrid() {
+	return (
+		<>
+			<DataGrid rows={rows} columns={columns} checkboxSelection={true} />
+		</>
+	);
+}
+
+export default AppGrid;

@@ -2,68 +2,21 @@ import { NavLink, Outlet } from 'react-router';
 
 // Layout üzerindeki menülerde hangi component page kaldığımızı anlamk için Navlink kullanılır.
 import './main-layout.css'; // css import
+import Grid from '@mui/material/Grid';
+import Sidebar from '../components/sidebar';
+import ResponsiveAppBar from '../components/appbar';
 
 function MainLayout() {
 	return (
 		<>
-			<nav>
-				<NavLink
-					className={({ isActive }) => (isActive ? 'active' : 'passive')}
-					to="/"
-				>
-					Anasayfa
-				</NavLink>
-				{'|'}
-				<NavLink
-					className={({ isActive }) => (isActive ? 'active' : 'passive')}
-					to="/about"
-				>
-					Hakkımızda
-				</NavLink>
-				{'|'}
-				<NavLink
-					className={({ isActive }) => (isActive ? 'active' : 'passive')}
-					to="/photos"
-				>
-					Fotograflar
-				</NavLink>
-				{'|'}
-				<NavLink
-					className={({ isActive }) => (isActive ? 'active' : 'passive')}
-					to="/page1"
-				>
-					Page 1
-				</NavLink>
-				{'|'}
-				<NavLink
-					className={({ isActive }) => (isActive ? 'active' : 'passive')}
-					to="/page2"
-				>
-					Page 2
-				</NavLink>
-				{'|'}
+			<ResponsiveAppBar />
 
-				<NavLink
-					className={({ isActive }) => (isActive ? 'active' : 'passive')}
-					to="/products"
-				>
-					Ürünler
-				</NavLink>
-				{'|'}
-
-				<NavLink
-					className={({ isActive }) => (isActive ? 'active' : 'passive')}
-					to="/memo"
-				>
-					Memo Page
-				</NavLink>
-				{'|'}
-				<a href="https://google.com">Google</a>
-			</nav>
-
-			<div>
-				<Outlet />
-			</div>
+			{/* 12'lik grid sistemi kullanırz */}
+			<Grid container spacing={2}>
+				<Grid size={12}>
+					<Outlet />
+				</Grid>
+			</Grid>
 
 			<footer>Alt Bilgi</footer>
 		</>

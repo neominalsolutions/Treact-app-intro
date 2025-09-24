@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { useNavigate } from 'react-router';
+import AppGrid from '../../components/app-grid';
 
 const LazyDemo = lazy(() => import('../../components/lazy-demo'));
 
@@ -20,6 +21,8 @@ function About() {
 			<Suspense fallback={<>...Loading</>}>
 				<LazyDemo />
 			</Suspense>
+
+			<AppGrid />
 
 			<br></br>
 			<hr></hr>
