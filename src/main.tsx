@@ -6,6 +6,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router';
 import { mainRoutes } from './routes/main-routes';
 import { adminRoutes } from './routes/admin-routes';
 import { CounterProvider } from './contexts/counter.context';
+import { Provider } from 'react-redux';
+import store from './contexts/store';
 
 // import './index.css';
 // import { Demo } from './Demo';
@@ -28,9 +30,11 @@ const router = createBrowserRouter([mainRoutes, adminRoutes]);
 
 // yeni güncel versiyon
 createRoot(document.getElementById('root')!).render(
-	<CounterProvider>
-		<RouterProvider router={router} />
-	</CounterProvider>
+	<Provider store={store}> 
+		<CounterProvider>
+			<RouterProvider router={router} />
+		</CounterProvider>
+	</Provider>
 );
 
 // RouterProvider router={router} /> uygulamayı route yapısı ile ayağa kaldır.
