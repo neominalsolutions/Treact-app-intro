@@ -18,7 +18,7 @@ function Page2() {
 				<p>Global Sayac: {globalState?.counter}</p>
 				<button onClick={() => setCounter(counter + 1)}>(+)</button>
 				<br></br>
-				<Link to="/page1">Page 2</Link>
+				<Link to="/page1">Page 1</Link>
 				<hr></hr>
 			</>
 		</>

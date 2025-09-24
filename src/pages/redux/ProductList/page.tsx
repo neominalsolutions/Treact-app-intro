@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { addItem } from '../../../contexts/cartSlice/cartSlice';
 import type { RootDispatch } from '../../../contexts/store';
+import { Link } from 'react-router';
 
 export interface Product {
 	ProductName: string;
@@ -39,6 +40,7 @@ function ProductListPage() {
 
 	return (
 		<>
+			<Link to="/cart-summary">Sepetteki Ürünler</Link>
 			{plist.map((item) => {
 				return (
 					<div key={item.ProductID}>

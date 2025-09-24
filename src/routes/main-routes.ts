@@ -6,6 +6,8 @@ import PhotoPage from '../pages/photo/page';
 import PhotoDetailPage from '../pages/photo/[id]/page';
 import Page1 from '../pages/contexts/page1/page';
 import Page2 from '../pages/contexts/page2/page';
+import ProductListPage from '../pages/redux/ProductList/page';
+import CartSummaryPage from '../pages/redux/CartSummary/page';
 
 export const mainRoutes: RouteObject = {
 	path: '',
@@ -34,6 +36,14 @@ export const mainRoutes: RouteObject = {
 		{
 			path: '/page2',
 			Component: Page2,
+		},
+		{
+			path: '/products',
+			Component: ProductListPage,
+		},
+		{
+			path: '/cart-summary',
+			Component: CartSummaryPage,
 		},
 	],
 };

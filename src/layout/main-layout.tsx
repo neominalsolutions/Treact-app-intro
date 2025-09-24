@@ -42,6 +42,14 @@ function MainLayout() {
 					Page 2
 				</NavLink>
 				{'|'}
+
+				<NavLink
+					className={({ isActive }) => (isActive ? 'active' : 'passive')}
+					to="/products"
+				>
+					Ürünler
+				</NavLink>
+				{'|'}
 				<a href="https://google.com">Google</a>
 			</nav>
 
