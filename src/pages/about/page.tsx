@@ -1,4 +1,7 @@
+import { lazy, Suspense } from 'react';
 import { useNavigate } from 'react-router';
+
+const LazyDemo = lazy(() => import('../../components/lazy-demo'));
 
 function About() {
 	// use ile başlayan herşey react da hooktur.
@@ -10,6 +13,16 @@ function About() {
 	return (
 		<>
 			<p>About Page</p>
+
+			<br></br>
+			<hr></hr>
+
+			<Suspense fallback={<>...Loading</>}>
+				<LazyDemo />
+			</Suspense>
+
+			<br></br>
+			<hr></hr>
 
 			<button onClick={() => navigate('/')}>Anasayfa</button>
 		</>
