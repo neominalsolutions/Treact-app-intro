@@ -27,6 +27,8 @@ function CartSummaryPage() {
 						</div>
 					);
 				})}
+
+			<div>Total: {cartState.total}</div>
 		</>
 	);
 }

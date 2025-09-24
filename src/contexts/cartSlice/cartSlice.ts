@@ -20,10 +20,35 @@ const CartSlice = createSlice({
 	reducers: {
 		// state değiştirmek için dışarıdan çağırılacak olan actionlar
 		addItem: (state: CartState, action: PayloadAction<CartItem>) => {
-			state.items.push(action.payload);
+			const itemExist = state.items.find((x) => x.id === action.payload.id);
+
+			if (itemExist) {
+				itemExist.quantity++; // varsa quantity artır
+			} else {
+				state.items.push(action.payload);
+			}
+			// sum algoritması için reduce functiondan yararlandık.
+			const total = state.items.reduce(
+				(total, item) => (total += item.price * item.quantity),
+				0
+			);
+			state.total = total;
 		},
 		removeItem: (state: CartState, action: PayloadAction<{ id: number }>) => {
 			state.items = state.items.filter((x) => x.id != action.payload.id);
+
+			const total = state.items.reduce(
+				(total, item) => (total += item.price * item.quantity),
+				0
+			);
+			state.total = total;
+		},
+		updateQuantity: ( // algoritma sizde genel tekrar
+			state: CartState,
+			action: PayloadAction<{ id: number; quantity: number }>
+		) => {
+			console.log('state', state);
+			console.log('state', action);
 		},
 	},
 });
