@@ -4,6 +4,8 @@ import { CounterContext } from '../../../contexts/counter.context';
 
 function Page2() {
 	const [counter, setCounter] = React.useState(1);
+
+	// subscribe
 	const globalState = useContext(CounterContext); // contexten paylaşılan veriyi çek.
 
 	return (

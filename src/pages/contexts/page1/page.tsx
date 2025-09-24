@@ -20,8 +20,11 @@ function Page1() {
 			<br></br>
 			<p>Local Sayac: {counter}</p>
 			<p>Global Sayac: {globalState?.counter}</p>
+			<p>Counter Message: {globalState?.message}</p>
 			<button onClick={() => setCounter(counter + 1)}>(+)</button>
-			<button onClick={() => globalState?.dispatch()}>Global State (+)</button>
+			<button onClick={() => globalState?.increment()}>Global State (+)</button>
+			<button onClick={() => globalState?.decrement()}>Global State (-)</button>
+			<button onClick={() => globalState?.reset()}>Global State (reset)</button>
 			<br></br>
 			<Link to="/page2">Page 2</Link>
 			<hr></hr>
